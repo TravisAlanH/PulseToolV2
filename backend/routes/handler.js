@@ -14,8 +14,8 @@ router.get("/about", (req, res) => {
   //   },
   // ];
   axios.get("https://dummyjson.com/products").then((response) => {
-    console.log(response.data);
-    res.end(JSON.stringify(response.data));
+    console.log(response.data.products);
+    res.end(JSON.stringify(response.data.products));
   });
 
   // res.end(JSON.stringify(string));

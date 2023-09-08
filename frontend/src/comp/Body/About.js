@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 
 export default function About() {
   useEffect(() => {
@@ -9,15 +9,15 @@ export default function About() {
   const [items, setItems] = useState([]);
 
   const fetchItems = async () => {
-    // await axios.get("https://pulseback.onrender.com/about").then((res) => {
-    //   console.log(res.data);
-    //   setItems(res.data);
-    // });
-    const data = await fetch("/about");
-    console.log(data);
-    const items = await data.json();
-    console.log(items);
-    setItems(items["model"]);
+    await axios.get("https://pulseback.onrender.com/about").then((res) => {
+      console.log(res.data);
+      setItems(res.data["model"]);
+    });
+    // const data = await fetch("/about");
+    // console.log(data);
+    // const items = await data.json();
+    // console.log(items);
+    // setItems(items["model"]);
   };
 
   return items.map((item) =>

@@ -17,7 +17,7 @@ export default function About() {
     console.log(data);
     const items = await data.json();
     console.log(items);
-    setItems(items);
+    setItems(items["model"]);
   };
 
   return items.map((item) =>
